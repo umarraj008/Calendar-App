@@ -1,0 +1,14 @@
+.container {
+    width: 100%;
+    background-color: grey;   
+}
+
+.title-and-button-container {
+    
+}
+
+.events-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}

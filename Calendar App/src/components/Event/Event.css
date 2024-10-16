@@ -1,0 +1,7 @@
+.event-container {
+    width: 100%;
+    border: solid 2px black;
+    border-radius: 15px;
+    background-color: white;
+    color: black;
+}
