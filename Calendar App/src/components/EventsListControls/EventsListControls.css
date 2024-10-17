@@ -1,0 +1,43 @@
+/* Main container */
+.events-list-controls-container {
+  display: flex;
+  flex-direction: row;
+  background-color: red;
+  height: 50px;
+  gap: var(--m2);
+  margin-bottom: var(--m3);
+}
+
+/* title */
+.events-list-controls-container .title {
+  justify-content: flex-start;
+  text-align: left;
+  max-width: max-content;
+  background-color: lime;
+  font-size: var(--f2);
+}
+
+/* Date selector container */
+.events-list-controls-container .date-select-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: var(--m1);
+  margin-left: var(--m1);
+}
+
+/* Search events container */
+.events-list-controls-container .search-events-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: var(--m1);
+  margin-left: var(--m2);
+}
+
+.events-list-controls-container .add-events-button {
+  justify-content: flex-end;
+  margin-left: auto;
+}
