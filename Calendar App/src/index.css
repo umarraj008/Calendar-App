@@ -1,10 +1,17 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
+  font-family: "Roboto", sans-serif;
   font-weight: 400;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  --Primary: #6200EE;
+  --PrimaryVariant: #3700B3;
+  --Secondary: #03DAC6;
+  --SecondaryVariant: #018786;
+  --Error: #B00020;
+  
+
 }
