@@ -1,3 +1,4 @@
+/* Main container */
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -5,6 +6,30 @@
   text-align: center;
 }
 
+/* All elements */
+* {
+  padding: 0;
+  margin: 0;
+  font-weight: 400;
+}
+
+/* Main title container */
+.title-container {
+  /* background-color: orange; */
+  padding-top: 50px;
+  text-align: left;
+  margin-bottom: var(--m2);
+  border-bottom: 1px solid;
+}
+
+/* Title text */
+.title-container .title {
+  padding-bottom: var(--m2);
+  font-weight: 400;
+  font-size: var(--f1);
+}
+
+/* All buttons */
 button:hover {
   cursor: pointer;
 }

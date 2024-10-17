@@ -1,10 +1,33 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
+:root {  
+  font-family: "Roboto", sans-serif;
   font-weight: 400;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  /* Theme */
+  --Primary: #6200EE;
+  --PrimaryVariant: #3700B3;
+  --Secondary: #03DAC6;
+  --SecondaryVariant: #018786;
+  --Error: #B00020;
+
+  /* Margins */
+  --m1: 4px;
+  --m2: 8px;
+  --m3: 16px;
+  --m4: 32px;
+
+  /* Radius */
+  --r1: 5px;
+  --r2: 10px;
+  --r3: 15px;
+
+  /* Font sizes */
+  --f1: 40px;
+  --f2: 32px;
+  --f3: 24px;
+  --f4: 16px;
+  --f5: 8px;
 }

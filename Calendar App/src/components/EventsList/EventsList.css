@@ -1,0 +1,18 @@
+.events-list-container {
+    width: 100%;
+    /* background-color: grey; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px;  
+}
+
+.events-list-container .month-title {
+    font-size: var(--f3);
+    text-align: left;
+    /* background-color: lime; */
+}
+
+.events-list-container .month-title:not(:first-child) {
+    margin-top: var(--m3);
+}
