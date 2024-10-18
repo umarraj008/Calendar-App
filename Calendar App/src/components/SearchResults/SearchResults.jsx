@@ -1,11 +1,15 @@
-import React, { useState } from 'react'
-import "./EventsList.css"
-import Event from '../Event/Event'
+import React from 'react'
+import "../EventsList/EventsList.css";
+import Event from '../Event/Event';
 
-function EventsList(props) {
+function SearchResults(props) {
 
-  // Sort events by date
-  const sortedEvents = props.events.sort((a, b) => {
+  // Filter events by search text
+  const searchFilteredEvents = props.events.filter((event) => 
+    String(event.title).toLowerCase() == String(props.searchText).toLowerCase());
+
+  // Sort events by dates
+  const sortedEvents = searchFilteredEvents.sort((a, b) => {
     let dateA = new Date(a.date + " " + a.startTime);
     let dateB = new Date(b.date + " " + b.startTime);
     
@@ -38,30 +42,9 @@ function EventsList(props) {
   // Counts how many events are currently displayed
   var eventsItemCount = 0;
 
-  // Current selected date
-  const selectedDate = new Date(props.selectedDate);
-
-  // Dates compare function
-  const compareDatesByMonthYear = (date1, date2) => {
-    let year1 = date1.getFullYear();
-    let month1 = date1.getMonth();
-    let year2 = date2.getFullYear();
-    let month2 = date2.getMonth();
-
-    if (year1 < year2 || (year1 === year2 && month1 < month2)) {
-      return true;
-    }
-    return false;
-  }
-
   return (
     <div className='events-list-container'>
       {groupedEventsKeys.map((monthsEvents, monthIndex) => {
-        
-        // Filter months for selected date 
-        let monthsEventDate = new Date(monthsEvents);
-        if (compareDatesByMonthYear(monthsEventDate, selectedDate)) return;
-        
         // Display events in that month
         return (
           <>
@@ -78,4 +61,4 @@ function EventsList(props) {
   )
 }
 
-export default EventsList
+export default SearchResults
