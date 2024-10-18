@@ -6,7 +6,7 @@ function SearchResults(props) {
 
   // Filter events by search text
   const searchFilteredEvents = props.events.filter((event) => 
-    String(event.title).toLowerCase() == String(props.searchText).toLowerCase());
+    String(event.title).toLowerCase().includes(String(props.searchText).toLowerCase()));
 
   // Sort events by dates
   const sortedEvents = searchFilteredEvents.sort((a, b) => {
@@ -51,12 +51,12 @@ function SearchResults(props) {
             <h3 key={monthsEvents} className='month-title'><span>{monthsEvents}</span></h3>
             {groupedEventsValues[monthIndex].map((event, eventIndex) => {
               eventsItemCount++;
-              return (<Event key={event.id} data={event} deleteEvent={props.deleteEvent} />)
+              return (<Event key={event.id} data={event} editEvent={props.editEvent} deleteEvent={props.deleteEvent} />)
             })}
           </>
         )
       })}
-      {eventsItemCount <= 0 && <h3 className='no-events-text'>No Events...</h3>}
+      {eventsItemCount <= 0 && <h3 className='no-events-text'>No Events titles contain "{props.searchText}"...</h3>}
     </div>
   )
 }

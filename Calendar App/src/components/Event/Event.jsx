@@ -11,11 +11,6 @@ function Event(props) {
   const date = new Date(data.date);
   const eventDateString = days[date.getDay()] + " " +  date.getDate();
 
-  // Edit event button click
-  const onEditClick = () => {
-    
-  }
-
   // Options button click
   const toggleOptionsMenu = () => {
     setToggleOptionsContextMenu((prev) => !prev);
@@ -47,7 +42,7 @@ function Event(props) {
 
   return (
     <div id={"event_" + data.id} className={(data.important) ? "important event-item-container" : "event-item-container"}>
-      {toggleOptionsContextMenu && <OptionsContextMenu id={data.id} onEditClick={onEditClick} onDeleteClick={props.deleteEvent} closeOptionsMenu={closeOptionsMenu} />}
+      {toggleOptionsContextMenu && <OptionsContextMenu id={data.id} onEditClick={props.editEvent} onDeleteClick={props.deleteEvent} closeOptionsMenu={closeOptionsMenu} />}
 
       <div className="edit-button-container">
         <button className="options-button" onClick={toggleOptionsMenu}><span className="material-symbols-outlined">tune</span>Options</button>

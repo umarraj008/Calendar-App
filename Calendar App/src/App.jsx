@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
 import './App.css'
+import { EventObject } from "./EventObject";
 import EventsListControls from './components/EventsListControls/EventsListControls'
 import EventsList from './components/EventsList/EventsList'
-import { EventObject } from "./EventObject";
 import AddEventDialog from './components/AddEventDialog/AddEventDialog';
 import SearchResults from './components/SearchResults/SearchResults';
+import EditEventDialog from './components/EditEventDialog/EditEventDialog';
 
 function App() {
   const [events, setEvents] = useState(
@@ -40,7 +41,7 @@ function App() {
         "Title",
         "Description",
         "London",
-        "2024-08-22",
+        "2024-10-22",
         "09:30",
         "04:50",
         false,
@@ -48,7 +49,9 @@ function App() {
     ]
   );
   const [selectedDate, setSelectedDate] = useState(new Date().toISOString().slice(0,7));
-  const [dialogToggle, setDialogToggle] = useState(false);
+  const [addEventDialogToggle, setAddEventDialogToggle] = useState(false);
+  const [editEventDialogToggle, setEditEventDialogToggle] = useState(false);
+  const [eventBeingEdited, setEventBeingEdited] = useState(null);
   const [searching, setSearching] = useState(false);
   const [searchText, setSearchText] = useState("");
 
@@ -71,7 +74,7 @@ function App() {
 
   // Add Events button
   const addEventButtonClick = (event) => {
-    setDialogToggle(true);
+    setAddEventDialogToggle(true);
   }
 
   // Delete event
@@ -79,9 +82,36 @@ function App() {
     setEvents((prev) => prev.filter(event => event.id != eventID));
   }
 
+  // Edit event
+  const editEvent = (data) => {
+    setEvents((prev) => prev.filter(event => {
+      if (event.id == data.id) {
+        event.title = data.title;  
+        event.description = data.description;  
+        event.location = data.location;  
+        event.date = data.date;  
+        event.startTime = data.startTime;  
+        event.endTime = data.endTime;  
+        event.important = data.important;  
+      }
+      return event;
+    }));
+  }
+
+  // Open edit event dialog
+  const openEditEventDialog = (eventID) => {
+    setEditEventDialogToggle(true);
+    setEventBeingEdited(events.filter(event => event.id == eventID)[0]);
+  }
+
   // To close add event dialog modal
-  const closeDialog = () => {
-    setDialogToggle(false);
+  const closeAddEventDialog = () => {
+    setAddEventDialogToggle(false);
+  }
+
+  // To close edit event dialog modal
+  const closeEditEventDialog = () => {
+    setEditEventDialogToggle(false);
   }
 
   // Create a new event object and add to list
@@ -97,7 +127,8 @@ function App() {
 
   return (
     <>
-      {dialogToggle && <AddEventDialog selectedDate={selectedDate} closeDialog={closeDialog} errorMessage={errorMessage} addNewEvent={addNewEvent}/> }
+      {addEventDialogToggle && <AddEventDialog selectedDate={selectedDate} closeDialog={closeAddEventDialog} errorMessage={errorMessage} addNewEvent={addNewEvent}/> }
+      {editEventDialogToggle && <EditEventDialog event={eventBeingEdited} closeDialog={closeEditEventDialog} errorMessage={errorMessage} editEvent={editEvent}/> }
       <div className="title-container">
         <h1 className='title'>Calendar App<span>By Umar Rajput</span></h1>
       </div>
@@ -111,9 +142,9 @@ function App() {
         clearSearch={clearSearch}
       />
       {(searching) ? 
-        <SearchResults events={events} searchText={searchText} deleteEvent={deleteEvent} />
+        <SearchResults events={events} searchText={searchText} editEvent={openEditEventDialog} deleteEvent={deleteEvent} />
           :
-        <EventsList events={events} selectedDate={selectedDate} deleteEvent={deleteEvent} />
+        <EventsList events={events} selectedDate={selectedDate} editEvent={openEditEventDialog} deleteEvent={deleteEvent} />
       }
     </>
   )

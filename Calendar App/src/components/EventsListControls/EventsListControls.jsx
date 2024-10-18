@@ -65,7 +65,7 @@ function EventListControls(props) {
           </>
           :
           <div className='search-results-container'>
-            <h3 className='search-results-text'>Search Results For: {props.searchText}</h3>
+            <h3 className='search-results-text'>Search Results Containing: {props.searchText}</h3>
             <button className="clear-search-button" onClick={props.clearSearch}><span className="material-symbols-outlined">clear</span></button>
           </div>
         }
