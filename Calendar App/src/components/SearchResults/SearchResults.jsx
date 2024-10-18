@@ -51,7 +51,7 @@ function SearchResults(props) {
             <h3 key={monthsEvents} className='month-title'><span>{monthsEvents}</span></h3>
             {groupedEventsValues[monthIndex].map((event, eventIndex) => {
               eventsItemCount++;
-              return (<Event key={event.id} data={event} />)
+              return (<Event key={event.id} data={event} deleteEvent={props.deleteEvent} />)
             })}
           </>
         )
