@@ -74,6 +74,11 @@ function App() {
     setDialogToggle(true);
   }
 
+  // Delete event
+  const deleteEvent = (eventID) => {
+    setEvents((prev) => prev.filter(event => event.id != eventID));
+  }
+
   // To close add event dialog modal
   const closeDialog = () => {
     setDialogToggle(false);
@@ -106,9 +111,9 @@ function App() {
         clearSearch={clearSearch}
       />
       {(searching) ? 
-        <SearchResults events={events} searchText={searchText} />
+        <SearchResults events={events} searchText={searchText} deleteEvent={deleteEvent} />
           :
-        <EventsList events={events} selectedDate={selectedDate} />
+        <EventsList events={events} selectedDate={selectedDate} deleteEvent={deleteEvent} />
       }
     </>
   )
