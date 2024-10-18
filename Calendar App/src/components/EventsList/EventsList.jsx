@@ -41,6 +41,9 @@ function EventsList(props) {
   // Current selected date
   const selectedDate = new Date(props.selectedDate);
 
+  // Selected date to month string
+  const selectedDateString = selectedDate.toLocaleDateString("default", {month: 'long', year: "numeric"});
+
   // Dates compare function
   const compareDatesByMonthYear = (date1, date2) => {
     let year1 = date1.getFullYear();
@@ -68,12 +71,12 @@ function EventsList(props) {
             <h3 key={monthsEvents} className='month-title'><span>{monthsEvents}</span></h3>
             {groupedEventsValues[monthIndex].map((event, eventIndex) => {
               eventsItemCount++;
-              return (<Event key={event.id} data={event} deleteEvent={props.deleteEvent} />)
+              return (<Event key={event.id} data={event} editEvent={props.editEvent} deleteEvent={props.deleteEvent} />)
             })}
           </>
         )
       })}
-      {eventsItemCount <= 0 && <h3 className='no-events-text'>No Events...</h3>}
+      {eventsItemCount <= 0 && <h3 className='no-events-text'>{"No Events in " + selectedDateString + " or after..."}</h3>}
     </div>
   )
 }

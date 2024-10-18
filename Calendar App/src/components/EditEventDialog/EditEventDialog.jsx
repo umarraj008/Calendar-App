@@ -1,33 +1,32 @@
 import React, { useEffect, useState } from 'react'
-import "./AddEventDialog.css"
+import "../AddEventDialog/AddEventDialog.css";
 
-function AddEventDialog(props) {
+function EditEventDialog(props) {
   // Get the current date
   const dateNow = new Date();
   const timeNow = dateNow.toLocaleTimeString([], {hour: "2-digit", minute: "2-digit"});
-
+  
   // State variables
-  const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
-  const [location, setLocation] = useState("");
-  const [date, setDate] = useState(dateNow.toISOString().split("T")[0]);
-  const [startTime, setStartTime] = useState(timeNow);
-  const [endTime, setEndTime] = useState(timeNow);
-  const [important, setImportant] = useState("");
+  const [id, setID] = useState(props.event.id);
+  const [title, setTitle] = useState(props.event.title);
+  const [description, setDescription] = useState(props.event.description);
+  const [location, setLocation] = useState(props.event.location);
+  const [date, setDate] = useState(props.event.date);
+  const [startTime, setStartTime] = useState(props.event.startTime);
+  const [endTime, setEndTime] = useState(props.event.endTime);
+  const [important, setImportant] = useState(props.event.important);
   const [isSubmitted, setIsSubmitted] = useState(false);
-
+  
   // Close dialog and reset data
   const closeDialog = () => {
-    let currentDateNow = new Date();
-    let currentTimeNow = dateNow.toLocaleTimeString([], {hour: "2-digit", minute: "2-digit"});
-
     // Clear all form input
+    setID("");
     setTitle("");
     setDescription("");
     setLocation("");
-    setDate(currentDateNow);
-    setStartTime(currentTimeNow);
-    setEndTime(currentTimeNow);
+    setDate("");
+    setStartTime("");
+    setEndTime("");
     setImportant("");
 
     // Close dialog
@@ -48,7 +47,7 @@ function AddEventDialog(props) {
     event.preventDefault();
     setIsSubmitted(true);
   }
-  
+
   // Use effect hook to submit data synchronously
   useEffect(() => {
     if (isSubmitted) {
@@ -56,17 +55,20 @@ function AddEventDialog(props) {
       // title needs to have text length greater than 0
       if (title.length == 0) {
         props.errorMessage("Please Enter a Title For This Event.");
+        setIsSubmitted(false);
         return;
       }
       
       // End time needs to be more than start time
       if (endTime < startTime) {
         props.errorMessage("End Time Must Be Greater Than Start Time.");
+        setIsSubmitted(false);
         return;
       }
-    
+
       // No errors -> Pass data to callback 
-      props.addNewEvent({
+      props.editEvent({
+        id: id,
         title: title,
         description: description,
         date: date,
@@ -75,19 +77,19 @@ function AddEventDialog(props) {
         location: location,
         important: important,
       });
-    
+
       // Close dialog after submitting data
       closeDialog();
 
       // Clear submit
       setIsSubmitted(false);
     }
-  });
+  }, [isSubmitted, title, location, description, date, startTime, endTime, important]);
 
   return (
     <div className='add-event-dialog-container'>
       <div className='modal-container'>
-          <h2 className='title'>Add New Event</h2>
+          <h2 className='title'>Edit Event</h2>
           
           <form onSubmit={submitData}>
             <div className="left-section">
@@ -112,12 +114,12 @@ function AddEventDialog(props) {
               <input id="location" name="location" placeholder='Location' type="text" onChange={updateLocation} value={location} />  
               
               <div className="checkbox-container">
-                <input id="important" name="important" type="checkbox" onChange={updateImportant} value={important} /> 
+                <input id="important" name="important" type="checkbox" onChange={updateImportant} checked={important} /> 
                 <label id="checkboxLabel" htmlFor="important">Important</label>
               </div>
               
               <div className="buttons-container">
-                <button type="submit">Add</button>
+                <button type="submit">Save</button>
                 <button onClick={closeDialog}>Cancel</button>
               </div>
             </div>
@@ -128,4 +130,4 @@ function AddEventDialog(props) {
   )
 }
 
-export default AddEventDialog
+export default EditEventDialog
