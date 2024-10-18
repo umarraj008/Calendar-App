@@ -3,6 +3,7 @@ import './App.css'
 import EventsListControls from './components/EventsListControls/EventsListControls'
 import EventsList from './components/EventsList/EventsList'
 import { EventObject } from "./EventObject";
+import AddEventDialog from './components/AddEventDialog/AddEventDialog';
 
 function App() {
   const [events, setEvents] = useState(
@@ -45,31 +46,51 @@ function App() {
       ),
     ]
   );
-
   const [selectedDate, setSelectedDate] = useState(new Date().toISOString().slice(0,7));
+  const [dialogToggle, setDialogToggle] = useState(false);
 
+  // Update the current selected date
   const updateSelectedDate = (date) => {
     setSelectedDate(date);
   }
 
+  // used to search events
   const searchEvents = () => {
 
   }
 
-  const addEvent = (event) => {
-    setEvents((prev) => ([...prev, event]));
+  // Add Events button
+  const addEventButtonClick = (event) => {
+    setDialogToggle(true);
+  }
+
+  // To close add event dialog modal
+  const closeDialog = () => {
+    setDialogToggle(false);
+  }
+
+  // Create a new event object and add to list
+  const addNewEvent = (data) => {
+    let newEvent = new EventObject(data.title, data.description, data.location, data.date, data.startTime, data.endTime, data.important);
+    setEvents((prev) => ([...prev, newEvent]));
+  }
+
+  // Error message function
+  const errorMessage = (message) => {
+    alert(message);
   }
 
   return (
     <>
+      {dialogToggle && <AddEventDialog selectedDate={selectedDate} closeDialog={closeDialog} errorMessage={errorMessage} addNewEvent={addNewEvent}/> }
       <div className="title-container">
-        <h1 className='title'>Calendar App</h1>
+        <h1 className='title'>Calendar App<span>By Umar Rajput</span></h1>
       </div>
       <EventsListControls 
         selectedDate={selectedDate} 
         updateSelectedDate={updateSelectedDate} 
         searchEvents={searchEvents} 
-        addEvent={addEvent} 
+        addEventButtonClick={addEventButtonClick} 
       />
       <EventsList events={events} selectedDate={selectedDate} />
     </>
