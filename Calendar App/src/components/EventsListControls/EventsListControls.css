@@ -2,7 +2,7 @@
 .events-list-controls-container {
   display: flex;
   flex-direction: row;
-  background-color: red;
+  /* background-color: grey; */
   height: 50px;
   gap: var(--m2);
   margin-bottom: var(--m3);
@@ -13,7 +13,7 @@
   justify-content: flex-start;
   text-align: left;
   max-width: max-content;
-  background-color: lime;
+  /* background-color: lime; */
   font-size: var(--f2);
 }
 

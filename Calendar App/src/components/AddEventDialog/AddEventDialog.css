@@ -1,0 +1,128 @@
+/* Outer Grey Dialog Container */
+.add-event-dialog-container {
+    background-color: rgba(0,0,0,0.5);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    overflow: hidden;
+}
+
+/* Modal container */
+.add-event-dialog-container .modal-container {
+    background-color: white;
+    width: 35%;
+    border-radius: var(--r2);
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.5);
+}
+
+/* Modal Title */
+.modal-container .title {
+    font-size: var(--f2);
+    justify-content: flex-start;
+    margin-left: 0;
+    text-align: left;
+    margin-top: var(--m2);
+    margin-left: var(--m2);
+}
+
+/* Form */
+.modal-container form {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    /* background-color: red; */
+    margin-bottom: var(--m2);
+    gap: var(--m2);
+}
+
+/* Form Label */
+.modal-container form label {
+    text-align: left;
+    margin-top: var(--m2);
+}
+
+/* Form input */
+.modal-container form input {
+    box-sizing: border-box;
+    padding: var(--m2);
+    margin: 0;
+    /* background-color: lime; */
+    height: 30px;
+    border-radius: var(--r1);
+}
+
+/* Form textarea */
+.modal-container form textarea {
+    box-sizing: border-box;
+    padding: var(--m2);;
+    margin: 0;
+    flex: 1;
+    /* background-color: lime; */
+    border-radius: var(--r1);
+    resize: none;
+}
+
+/* Form left section */
+.modal-container form .left-section {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin-top: var(--m2);
+    /* margin-bottom: var(--m2); */
+    margin-left: var(--m2);
+    gap: var(--m1);
+}
+
+/* Form right section */
+.modal-container form .right-section {
+    display: flex;
+    flex-direction: column;
+    flex: 0.25;
+    margin-top: var(--m2);
+    /* margin-bottom: var(--m2); */
+    margin-right: var(--m2);
+    gap: var(--m1);
+}
+
+/* Form Checkbox Container */
+.modal-container form .right-section .checkbox-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+/* Form Checkbox */
+.modal-container form .right-section input[type=checkbox] {
+    width: 15px;
+    cursor: pointer;
+}
+
+/* Form Checkbox Label */
+.modal-container form .right-section #checkboxLabel {
+    margin: 0;
+    margin-left: var(--m2);
+    user-select: none;
+    cursor: pointer;
+}
+
+/* Form buttons container */
+.modal-container form .right-section .buttons-container {
+    display: flex;
+    flex-direction: row;
+    gap: var(--m1);
+    margin-top: auto;
+}
+
+/* Form buttons */
+.modal-container form .right-section .buttons-container button {
+    flex: 1;
+    height: 30px;
+    border-radius: var(--r2);
+}

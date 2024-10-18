@@ -18,15 +18,21 @@
   /* background-color: orange; */
   padding-top: 50px;
   text-align: left;
-  margin-bottom: var(--m2);
+  margin-bottom: var(--m4);
   border-bottom: 1px solid;
 }
 
 /* Title text */
 .title-container .title {
-  padding-bottom: var(--m2);
+  padding-bottom: var(--m1);
   font-weight: 400;
   font-size: var(--f1);
+}
+
+/* Subtitle text */
+.title-container .title span {
+  margin-left: var(--m2);
+  font-size: var(--f4);
 }
 
 /* All buttons */

@@ -11,14 +11,14 @@ function Event(props) {
   const eventDateString = days[date.getDay()] + " " +  date.getDate();
 
   return (
-    <div id={"event_" + data.id} className={(data.important) ? "event-item-container important" : "event-item-container"}>
+    <div id={"event_" + data.id} className={(data.important) ? "important event-item-container" : "event-item-container"}>
       <div className='date-container'>
         <p className="date">{eventDateString}</p>
       </div>
 
       <div className="time-location-container">
         <p className="time"><span className="material-symbols-outlined">schedule</span>{data.startTime + " - " + data.endTime}</p>
-        <p className="location"><span className="material-symbols-outlined">location_on</span>{data.location} | 12:20 - 24:40</p>
+        <p className="location"><span className="material-symbols-outlined">location_on</span>{data.location}</p>
       </div>
       
       <div className='info-container'>

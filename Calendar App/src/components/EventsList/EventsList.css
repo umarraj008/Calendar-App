@@ -1,6 +1,7 @@
 .events-list-container {
     width: 100%;
     /* background-color: grey; */
+    /* height: 100%; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -11,8 +12,20 @@
     font-size: var(--f3);
     text-align: left;
     /* background-color: lime; */
+    border-bottom: 1px dotted black;
+    line-height: 0.1em;
+    margin: 10px 0 ;
+}
+
+.events-list-container .month-title span {
+    background-color: white;
+    padding-right: var(--m2);
 }
 
 .events-list-container .month-title:not(:first-child) {
-    margin-top: var(--m3);
+    margin-top: var(--m4);
+}
+
+.no-events-text {
+    font-size: var(--f4);
 }
