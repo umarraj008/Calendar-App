@@ -4,6 +4,7 @@ import EventsListControls from './components/EventsListControls/EventsListContro
 import EventsList from './components/EventsList/EventsList'
 import { EventObject } from "./EventObject";
 import AddEventDialog from './components/AddEventDialog/AddEventDialog';
+import SearchResults from './components/SearchResults/SearchResults';
 
 function App() {
   const [events, setEvents] = useState(
@@ -48,15 +49,24 @@ function App() {
   );
   const [selectedDate, setSelectedDate] = useState(new Date().toISOString().slice(0,7));
   const [dialogToggle, setDialogToggle] = useState(false);
+  const [searching, setSearching] = useState(false);
+  const [searchText, setSearchText] = useState("");
 
   // Update the current selected date
   const updateSelectedDate = (date) => {
     setSelectedDate(date);
   }
 
-  // used to search events
-  const searchEvents = () => {
+  // Ussed to search events
+  const searchEvents = (searchText) => {
+    setSearching(true);
+    setSearchText(searchText);
+  }
 
+  // Clear search 
+  const clearSearch = () => {
+    setSearching(false);
+    setSearchText("");
   }
 
   // Add Events button
@@ -90,9 +100,16 @@ function App() {
         selectedDate={selectedDate} 
         updateSelectedDate={updateSelectedDate} 
         searchEvents={searchEvents} 
-        addEventButtonClick={addEventButtonClick} 
+        addEventButtonClick={addEventButtonClick}
+        searching={searching} 
+        searchText={searchText}
+        clearSearch={clearSearch}
       />
-      <EventsList events={events} selectedDate={selectedDate} />
+      {(searching) ? 
+        <SearchResults events={events} searchText={searchText} />
+          :
+        <EventsList events={events} selectedDate={selectedDate} />
+      }
     </>
   )
 }

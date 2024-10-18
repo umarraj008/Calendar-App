@@ -1,3 +1,4 @@
+/* Events list container */
 .events-list-container {
     width: 100%;
     /* background-color: grey; */
@@ -8,6 +9,7 @@
     gap: 15px;  
 }
 
+/* Months title line */
 .events-list-container .month-title {
     font-size: var(--f3);
     text-align: left;
@@ -17,15 +19,18 @@
     margin: 10px 0 ;
 }
 
+/* Months title Text */
 .events-list-container .month-title span {
     background-color: white;
     padding-right: var(--m2);
 }
 
+/* All months title elements except the first */
 .events-list-container .month-title:not(:first-child) {
     margin-top: var(--m4);
 }
 
+/* No events text */
 .no-events-text {
     font-size: var(--f4);
 }
