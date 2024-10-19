@@ -1,12 +1,12 @@
 /* Edit context menu container */
 .edit-context-menu-container {
     position: absolute;
-    background-color: lightgrey;
-    border-radius: var(--r2);
+    background-color: var(--btn-bg);
+    border-radius: var(--r2) 0 var(--r2) var(--r2);
     padding: var(--m2);
     display: flex;
     flex-direction: column;
-    margin-top: 40px;
+    margin-top: 75px;
     gap: var(--m1)
 }
 

@@ -5,13 +5,7 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
-  /* Theme */
-  --Primary: #6200EE;
-  --PrimaryVariant: #3700B3;
-  --Secondary: #03DAC6;
-  --SecondaryVariant: #018786;
-  --Error: #B00020;
+  background-color: var(--bg);
 
   /* Margins */
   --m1: 4px;
@@ -30,4 +24,68 @@
   --f3: 24px;
   --f4: 16px;
   --f5: 8px;
+}
+
+/* Light Theme */
+:root[data-theme="light"] {
+  --bg: #F7F8F9; /* Neutral100 */
+  --border: 1px solid #B3B9C4; /* Neutral400 */
+  
+  /* Text */
+  --text1: black; /* Neutral100 */
+  --text2: black; /* Neutral100 */
+  --text3: black; /* Neutral100 */
+  --text4: black; /* Neutral100 */
+  --text-red: red; /* Neutral100 */
+
+  /* Card */
+  --card-bg: #F1F2F4; /* Neutral100 */
+  --card-border: none;
+  --card-shadow: 0px 0px 0px 1px #00000000, 0px 1px 1px #091E4240, 0px 0px 1px #091E424F;
+  --card-important-bg: red;
+  
+  /* Button */
+  --btn-bg: #758195; /* Neutral600 */
+  --btn-border: white;
+  --btn-text: white;
+  --btn-hover-bg: black;
+  --btn-active-bg: black;
+  --btn-delete-bg: black;
+
+  /* Input */
+  --input-bg: white;
+  --input-text: white;
+  --input-border: white;
+}
+
+/* Dark Theme */
+:root[data-theme="dark"] {
+  --bg: #1D2125;
+  --border: 1px solid #454F59;
+  
+  /* Text */
+  --text1: white;
+  --text2: white;
+  --text3: white;
+  --text4: white;
+  --text-red: red;
+
+  /* Card */
+  --card-bg: #22272B;
+  --card-border: white;
+  --card-shadow: 0px 0px 0px 1px #ffffff00, 0px 1px 1px #DEE4EA40, 0px 0px 1px #DEE4EA4F;
+  --card-important-bg: red;
+  
+  /* Button */
+  --btn-bg: #5b6269;
+  --btn-border: white;
+  --btn-text: white;
+  --btn-hover-bg: black;
+  --btn-active-bg: black;
+  --btn-delete-bg: black;
+
+  /* Input */
+  --input-bg: white;
+  --input-text: white;
+  --input-border: white;
 }

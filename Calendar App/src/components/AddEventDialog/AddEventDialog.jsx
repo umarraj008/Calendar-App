@@ -56,12 +56,14 @@ function AddEventDialog(props) {
       // title needs to have text length greater than 0
       if (title.length == 0) {
         props.errorMessage("Please Enter a Title For This Event.");
+        setIsSubmitted(false);
         return;
       }
       
       // End time needs to be more than start time
       if (endTime < startTime) {
         props.errorMessage("End Time Must Be Greater Than Start Time.");
+        setIsSubmitted(false);
         return;
       }
     

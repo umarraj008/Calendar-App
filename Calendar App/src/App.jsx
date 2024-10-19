@@ -54,6 +54,7 @@ function App() {
   const [eventBeingEdited, setEventBeingEdited] = useState(null);
   const [searching, setSearching] = useState(false);
   const [searchText, setSearchText] = useState("");
+  const [currnetTheme, setCurrentTheme] = useState(document.getElementsByTagName("html")[0].getAttribute("data-theme"));
 
   // Update the current selected date
   const updateSelectedDate = (date) => {
@@ -125,12 +126,36 @@ function App() {
     alert(message);
   }
 
+  // To change theme
+  const toggleTheme = () => {
+    let html = document.getElementsByTagName("html")[0];
+    
+    if (html.getAttribute("data-theme") == "light") {
+      html.setAttribute("data-theme", "dark");
+      setCurrentTheme("dark");
+    } else if (html.getAttribute("data-theme") == "dark") {
+      html.setAttribute("data-theme", "light");
+      setCurrentTheme("light");
+    }
+  }
+
   return (
     <>
       {addEventDialogToggle && <AddEventDialog selectedDate={selectedDate} closeDialog={closeAddEventDialog} errorMessage={errorMessage} addNewEvent={addNewEvent}/> }
       {editEventDialogToggle && <EditEventDialog event={eventBeingEdited} closeDialog={closeEditEventDialog} errorMessage={errorMessage} editEvent={editEvent}/> }
       <div className="title-container">
         <h1 className='title'>Calendar App<span>By Umar Rajput</span></h1>
+        <button className="theme-button" onClick={toggleTheme}>{(currnetTheme == "dark") ? 
+          <>
+            <span className="material-symbols-outlined">toggle_on</span>
+            <p>Dark Mode</p> 
+          </>
+            : 
+          <>
+            <span className="material-symbols-outlined">toggle_off</span>
+            <p>Light Mode</p>
+          </>
+        }</button>
       </div>
       <EventsListControls 
         selectedDate={selectedDate} 

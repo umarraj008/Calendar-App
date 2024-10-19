@@ -17,11 +17,12 @@
     border-bottom: 1px dotted black;
     line-height: 0.1em;
     margin: 10px 0 ;
+    color: var(--text-secondary-lighter);
 }
 
 /* Months title Text */
 .events-list-container .month-title span {
-    background-color: white;
+    background-color: var(--bg);
     padding-right: var(--m2);
 }
 
