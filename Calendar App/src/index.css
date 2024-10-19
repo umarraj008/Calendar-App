@@ -24,28 +24,58 @@
   --f3: 24px;
   --f4: 16px;
   --f5: 8px;
+
+  /* Imported colors from https://atlassian.design/foundations/color-new/color-palette-new */
+  /* Light theme */
+  --N0: #FFFFFF;
+  --N100: #F7F8F9;
+  --N200: #F1F2F4;
+  --N300: #DCDFE4;
+  --N400: #B3B9C4;
+  --N500: #8590A2;
+  --N600: #758195;
+  --N700: #626F86;
+  --N800: #44546F;
+  --N900: #2C3E5D;
+  --N1000: #172B4D;
+  --N1100: #091E42;
+  
+  /* Dark theme */
+  --DN0: #161A1D;
+  --DN100: #1D2125;
+  --DN200: #22272B;
+  --DN300: #2C333A;
+  --DN400: #454F59;
+  --DN500: #596773;
+  --DN600: #738496;
+  --DN700: #8C9BAB;
+  --DN800: #9FADBC;
+  --DN900: #B6C2CF;
+  --DN1000: #C7D1DB;
+  --DN1100: #DEE4EA;
 }
 
 /* Light Theme */
 :root[data-theme="light"] {
-  --bg: #F7F8F9; /* Neutral100 */
-  --border: 1px solid #B3B9C4; /* Neutral400 */
+  --bg: var(--N100);
+  --border: 1px solid var(--N400);
+  --border-color: var(--N400);
   
   /* Text */
   --text1: black; /* Neutral100 */
   --text2: black; /* Neutral100 */
   --text3: black; /* Neutral100 */
   --text4: black; /* Neutral100 */
-  --text-red: red; /* Neutral100 */
+  --text-red: #AE2E24;
 
   /* Card */
-  --card-bg: #F1F2F4; /* Neutral100 */
+  --card-bg: var(--N300); /* Neutral300 */
   --card-border: none;
   --card-shadow: 0px 0px 0px 1px #00000000, 0px 1px 1px #091E4240, 0px 0px 1px #091E424F;
-  --card-important-bg: red;
+  --card-important-bg: #FD9891;
   
   /* Button */
-  --btn-bg: #758195; /* Neutral600 */
+  --btn-bg: var(--N400); /* Neutral500 */
   --btn-border: white;
   --btn-text: white;
   --btn-hover-bg: black;
@@ -62,6 +92,7 @@
 :root[data-theme="dark"] {
   --bg: #1D2125;
   --border: 1px solid #454F59;
+  --border-color: #454F59;
   
   /* Text */
   --text1: white;
@@ -71,13 +102,13 @@
   --text-red: red;
 
   /* Card */
-  --card-bg: #22272B;
+  --card-bg: #2C333A;
   --card-border: white;
   --card-shadow: 0px 0px 0px 1px #ffffff00, 0px 1px 1px #DEE4EA40, 0px 0px 1px #DEE4EA4F;
   --card-important-bg: red;
   
   /* Button */
-  --btn-bg: #5b6269;
+  --btn-bg: #B6C2CF;
   --btn-border: white;
   --btn-text: white;
   --btn-hover-bg: black;

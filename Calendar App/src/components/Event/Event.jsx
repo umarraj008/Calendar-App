@@ -45,7 +45,7 @@ function Event(props) {
       {toggleOptionsContextMenu && <OptionsContextMenu id={data.id} onEditClick={props.editEvent} onDeleteClick={props.deleteEvent} closeOptionsMenu={closeOptionsMenu} />}
 
       <div className="option-button-container">
-        <button className="options-button" onClick={toggleOptionsMenu}>{(toggleOptionsContextMenu) ? <span className="material-symbols-outlined">keyboard_arrow_up</span> : <span className="material-symbols-outlined">keyboard_arrow_down</span>}Options</button>
+        <button className="options-button" onClick={toggleOptionsMenu}>Options{(toggleOptionsContextMenu) ? <span className="material-symbols-outlined">keyboard_arrow_up</span> : <span className="material-symbols-outlined">keyboard_arrow_down</span>}</button>
       </div>
 
       <div className='info-container'>

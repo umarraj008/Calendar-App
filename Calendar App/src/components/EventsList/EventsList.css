@@ -1,37 +1,39 @@
 /* Events list container */
 .events-list-container {
-    width: 100%;
-    /* background-color: grey; */
-    /* height: 100%; */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 15px;  
+  width: 100%;
+  /* background-color: grey; */
+  /* height: 100%; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 15px;  
 }
 
 /* Months title line */
 .events-list-container .month-title {
-    font-size: var(--f3);
-    text-align: left;
-    /* background-color: lime; */
-    border-bottom: 1px dotted black;
-    line-height: 0.1em;
-    margin: 10px 0 ;
-    color: var(--text-secondary-lighter);
+  text-align: left;
+  /* background-color: lime; */
+  border-bottom: 1px dotted var(--border-color);
+  line-height: 0;
+  /* background-color: red; */
+  margin: 10px 0 ;
+  color: var(--text-secondary-lighter);
 }
 
 /* Months title Text */
 .events-list-container .month-title span {
-    background-color: var(--bg);
-    padding-right: var(--m2);
+  background-color: var(--bg);
+  padding-right: var(--m2);
+  font-weight: bold;
+  font-size: 1.5rem;
 }
 
 /* All months title elements except the first */
 .events-list-container .month-title:not(:first-child) {
-    margin-top: var(--m4);
+  margin-top: var(--m4);
 }
 
 /* No events text */
 .no-events-text {
-    font-size: var(--f4);
+  font-size: var(--f4);
 }
