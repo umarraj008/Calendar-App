@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './App.css'
 import { EventObject } from "./EventObject";
 import EventsListControls from './components/EventsListControls/EventsListControls'
@@ -11,39 +11,48 @@ function App() {
   const [events, setEvents] = useState(
     [
       new EventObject(
-        "Title",
-        "Descriptiona aaaaaaaaaa aaaaaaa aaaaaaaaaaa aaaaaaa aaaaaaaaaaaaaa aaaaaaaaaaaa aaaaaaaa aaaaa aaaaa aaaaaa aaaaaaaaaaaa aaaaaa aaaaaa aaaaaaaaa aaaaa aaaaaaaaaaaa aaaa aaaaaa aaaaaaa aaaaaaa aaaaaaaa aaaaaaa aaaa aaaaaaaa aaaa aaaaaaaaa aaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaaaaaaa aaaaaa aaa aaaaa aaaaaaa aaaaa aaaaaaaa aaaaa aaaaaaaa aaaaa aaaaa aaaaaaaa aaaaa aaaaaaaaaaaaa aaaaaa aaaaaaaaa aaaaaa aaaaaa aaaaaa aaaaaaa aaaaaaaaa aaaaaaaa aaaaaaa aaaaaa aaaaaaa aaaaa aaaa",
-        "Online",
-        "2024-06-24",
-        "14:30",
-        "15:00",
+        "Morning Workout",
+        "Quick cardio session at home to kickstart your day.",
+        "Gym",
+        "2024-10-21",
+        "09:00",
+        "10:00",
         false,
       ),
       new EventObject(
-        "Title",
-        "Description",
-        "Birmingham",
-        "2024-06-24",
-        "13:25",
+        "Grocery Shopping",
+        "Pick up essentials for the week and maybe some treats.",
+        "Tesco",
+        "2024-10-21",
+        "17:00",
+        "17:30",
+        false,
+      ),
+      new EventObject(
+        "Lunch with Sarah",
+        "(This event has been tagged as important) Catch up over your favorite cafe's special.",
+        "Coffee Shop",
+        "2024-10-25",
         "14:00",
-        false,
-      ),
-      new EventObject(
-        "Title",
-        "Description",
-        "London",
-        "2024-07-11",
-        "hh:mm",
-        "hh:mm",
+        "15:00",
         true,
       ),
       new EventObject(
-        "Title",
-        "Description",
-        "London",
-        "2024-10-22",
-        "09:30",
-        "04:50",
+        "Work on Project X",
+        "Dedicate focused time to advance this task.",
+        "Home",
+        "2024-11-21",
+        "09:00",
+        "17:00",
+        false,
+      ),
+      new EventObject(
+        "Evening Walk",
+        "Unwind with a stroll around the neighborhood.",
+        "Park",
+        "2024-11-10",
+        "20:00",
+        "21:00",
         false,
       ),
     ]
@@ -54,7 +63,7 @@ function App() {
   const [eventBeingEdited, setEventBeingEdited] = useState(null);
   const [searching, setSearching] = useState(false);
   const [searchText, setSearchText] = useState("");
-  const [currnetTheme, setCurrentTheme] = useState(document.getElementsByTagName("html")[0].getAttribute("data-theme"));
+  const [currnetTheme, setCurrentTheme] = useState(document.documentElement.getAttribute("data-theme"));
 
   // Update the current selected date
   const updateSelectedDate = (date) => {
@@ -128,16 +137,27 @@ function App() {
 
   // To change theme
   const toggleTheme = () => {
-    let html = document.getElementsByTagName("html")[0];
+    let html = document.documentElement;
     
     if (html.getAttribute("data-theme") == "light") {
       html.setAttribute("data-theme", "dark");
       setCurrentTheme("dark");
+      localStorage.setItem("theme", "dark");
     } else if (html.getAttribute("data-theme") == "dark") {
       html.setAttribute("data-theme", "light");
       setCurrentTheme("light");
+      localStorage.setItem("theme", "light");
     }
   }
+
+  // Load theme
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme) {
+      setCurrentTheme(savedTheme);
+      document.documentElement.setAttribute("data-theme", savedTheme);
+    }
+  }, []);
 
   return (
     <>

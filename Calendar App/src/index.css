@@ -87,47 +87,38 @@
 
   /* Button */
   --btn-bg: var(--N400);
-  --btn-border: white;
-  --btn-text: white;
+  --btn-text: var(--N100);
   --btn-hover-bg: var(--N900);
-  --btn-active-bg: black;
-  --btn-delete-bg: black;
-
-  /* Input */
-  --input-bg: white;
-  --input-text: white;
-  --input-border: white;
 }
 
 /* Dark Theme */
 :root[data-theme="dark"] {
-  --bg: #1D2125;
-  --border: 1px solid #454F59;
-  --border-color: #454F59;
+  --bg: var(--DN100);
+  --border: 1px solid var(--DN400);
+  --border-color: var(--DN400);
   
   /* Text */
   --text1: white;
-  --text2: rgb(219, 219, 219);
-  --text3: rgb(184, 184, 184);
-  --text4: rgb(154, 154, 154);
+  --text2: rgb(205, 205, 205);
+  --text3: rgb(135, 135, 135);
+  --text4: rgb(120, 120, 120);
   --text-red: #C9372C;
 
   /* Card */
-  --card-bg: #2C333A;
-  --card-border: white;
-  --card-shadow: 0px 0px 0px 1px #ffffff00, 0px 1px 1px #DEE4EA40, 0px 0px 1px #DEE4EA4F;
+  --card-bg: var(--DN300);
+  --card-border: none;
+  --card-shadow: 0px 0px 0px 1px #00000000, 0px 1px 1px #091E4240, 0px 0px 1px #091E424F;
   --card-important: #C9372C;
   
-  /* Button */
-  --btn-bg: #B6C2CF;
-  --btn-border: white;
-  --btn-text: white;
-  --btn-hover-bg: black;
-  --btn-active-bg: black;
-  --btn-delete-bg: black;
+  /* Context Menu */
+  --context-bg: var(--DN100);
+  --context-shadow: 0px 0px 0px 1px #00000000, 0px 2px 5px #091E4240, 0px 0px 10px #091E424F;
+  --context-edit-btn-bg: var(--DN400);
+  --context-delete-btn-bg: #F15B50;
+  --context-delete-btn-hover-bg: #C9372C;
 
-  /* Input */
-  --input-bg: white;
-  --input-text: white;
-  --input-border: white;
+  /* Button */
+  --btn-bg: var(--DN400);
+  --btn-text: var(--N100);
+  --btn-hover-bg: var(--DN900);
 }

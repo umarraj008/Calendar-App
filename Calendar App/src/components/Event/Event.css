@@ -17,7 +17,6 @@
 
 /* Date container */
 .event-item-container .date-container {
-  flex: 0.2;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -26,6 +25,7 @@
   flex-direction: column;
   /* background-color: lime; */
   border-right: var(--border);
+  flex: 0.15;
 }
 
 /* Location and time container */
@@ -140,5 +140,5 @@
 
 /* Important events */
 .important {
-  border: 2px solid var(--card-important);
+  outline: 2px solid var(--card-important);
 }
