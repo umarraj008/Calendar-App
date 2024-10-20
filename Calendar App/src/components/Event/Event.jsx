@@ -7,9 +7,10 @@ function Event(props) {
   const [toggleOptionsContextMenu, setToggleOptionsContextMenu] = useState(false);
 
   // Convert date to Day + Date String
-  const days = ["Sun", "Mon", "Wed", "Thu", "Fri", "Sat"];
   const date = new Date(data.date);
-  const eventDateString = days[date.getDay()] + " " +  date.getDate();
+  const eventDateString = date.toLocaleString("default", {weekday: "short"});
+  const eventDate = date.getDate();
+  const isDateToday = date.toDateString() == new Date().toDateString();
 
   // Options button click
   const toggleOptionsMenu = () => {
@@ -44,8 +45,8 @@ function Event(props) {
     <div id={"event_" + data.id} className={(data.important) ? "important event-item-container" : "event-item-container"}>
       {toggleOptionsContextMenu && <OptionsContextMenu id={data.id} onEditClick={props.editEvent} onDeleteClick={props.deleteEvent} closeOptionsMenu={closeOptionsMenu} />}
 
-      <div className="edit-button-container">
-        <button className="options-button" onClick={toggleOptionsMenu}><span className="material-symbols-outlined">tune</span>Options</button>
+      <div className="option-button-container">
+        <button className="options-button" onClick={toggleOptionsMenu}>Options{(toggleOptionsContextMenu) ? <span className="material-symbols-outlined">keyboard_arrow_up</span> : <span className="material-symbols-outlined">keyboard_arrow_down</span>}</button>
       </div>
 
       <div className='info-container'>
@@ -59,7 +60,8 @@ function Event(props) {
       </div>
 
       <div className='date-container'>
-        <p className="date">{eventDateString}</p>
+        <p className={(isDateToday) ? "day date-today" : "day"}>{eventDateString}</p>
+        <p className={(isDateToday) ? "date date-today" : "date"}>{eventDate}</p>
       </div>
     </div>
   )

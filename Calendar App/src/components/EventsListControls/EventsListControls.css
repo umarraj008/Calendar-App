@@ -3,6 +3,7 @@
   display: flex;
   flex-direction: row;
   /* background-color: grey; */
+  align-items: center;
   height: 50px;
   gap: var(--m2);
   margin-bottom: var(--m3);
@@ -14,7 +15,9 @@
   text-align: left;
   max-width: max-content;
   /* background-color: lime; */
-  font-size: var(--f2);
+  font-size: 1.75rem;
+  color: var(--text1);
+  font-weight: bold;
 }
 
 /* Date selector container */
@@ -23,8 +26,44 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: var(--m1);
   margin-left: var(--m1);
+}
+
+/* Date selector input */
+.events-list-controls-container .date-select-container input {
+  height: 30px;
+  padding-left: var(--m2);
+  padding-right: var(--m2);
+  border: var(--border);
+  box-sizing: border-box;
+}
+
+/* Date selector buttons*/
+.events-list-controls-container .date-select-container button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  border: none;
+  width: 30px;
+  height: 30px;
+  /* color: var(--btn-text); */
+  /* background-color: var(--btn-bg); */
+  border: var(--border);
+} 
+
+/* Date selector left button */
+.events-list-controls-container .date-select-container .left-button {
+  border-radius: var(--r3) 0 0 var(--r3);
+  padding-left: var(--m1);
+  border-right: none;
+}
+
+/* Date selector right button */
+.events-list-controls-container .date-select-container .right-button {
+  border-radius: 0 var(--r3) var(--r3) 0 ;
+  padding-right: var(--m1);
+  border-left: none;
 }
 
 /* Search events container */
@@ -37,10 +76,59 @@
   margin-left: var(--m2);
 }
 
+/* Search events form */
+.events-list-controls-container .search-events-container form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  /* background-color: red; */
+}
+
+/* Search events search bar */
+.events-list-controls-container .search-events-container form input {
+  height: 30px;
+  border-radius: var(--r3) 0  0 var(--r3);
+  padding-left: var(--m2);
+  padding-right: var(--m2);
+  border: var(--border);
+  box-sizing: border-box;
+}
+
+/* Search events search button */
+.events-list-controls-container .search-events-container form button {
+  border: var(--border);
+  box-sizing: border-box;
+  height: 30px;
+  width: 30px;
+  padding-right: var(--m1);
+  border-left: none;
+  border-radius: 0 var(--r3) var(--r3) 0;
+}
+
+/* Search evnets search button icon */
+.events-list-controls-container .search-events-container form button span {
+  font-size: 20px;
+}
+
 /* Add event button */
 .events-list-controls-container .add-events-button {
   justify-content: flex-end;
   margin-left: auto;
+  border-radius: var(--r1);
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: var(--m1);
+  height: 40px;
+  background-color: var(--btn-bg);
+  color: var(--btn-text);
+  padding: var(--m2);
+}
+
+/* Add event button hover */
+.events-list-controls-container .add-events-button:hover {
+  background-color: var(--btn-hover-bg);
 }
 
 /* Search results container */

@@ -55,13 +55,36 @@ function AddEventDialog(props) {
       // Check form data
       // title needs to have text length greater than 0
       if (title.length == 0) {
-        props.errorMessage("Please Enter a Title For This Event.");
+        props.errorMessage("Please enter a title for this event.");
+        setIsSubmitted(false);
+        return;
+      }
+
+      // Check date is valid
+      if (date == "" || date == null || date == undefined || !date.includes("-")) {
+        props.errorMessage("Enter a valid date.")
+        setIsSubmitted(false);
         return;
       }
       
+      // Check start time is not empty
+      if (startTime == "" || startTime == null || startTime == undefined || !startTime.includes(":")) {
+        props.errorMessage("Enter a valid start time.")
+        setIsSubmitted(false);
+        return;
+      }
+      
+      // Check end time is not empty
+      if (endTime == "" || endTime == null || endTime == undefined || !endTime.includes(":")) {
+        props.errorMessage("Enter a valid end time.")
+        setIsSubmitted(false);
+        return;
+      }
+
       // End time needs to be more than start time
       if (endTime < startTime) {
-        props.errorMessage("End Time Must Be Greater Than Start Time.");
+        props.errorMessage("End time must be greater than start time.");
+        setIsSubmitted(false);
         return;
       }
     

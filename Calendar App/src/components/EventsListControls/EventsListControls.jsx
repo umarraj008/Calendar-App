@@ -48,10 +48,10 @@ function EventListControls(props) {
         {(!props.searching) ?
           <>
             <div className="date-select-container">
-              <button onClick={decrementSelectedDate}><span className="material-symbols-outlined">chevron_left</span></button>
+              <button className="left-button" onClick={decrementSelectedDate}><span className="material-symbols-outlined">chevron_left</span></button>
 
               <input type="month" id="date-selector" name='date-selector' onChange={updateDateSelectorValue} value={dateSelectorValue}/>
-              <button onClick={incrementSelectedDate}><span className="material-symbols-outlined">chevron_right</span></button>
+              <button className="right-button" onClick={incrementSelectedDate}><span className="material-symbols-outlined">chevron_right</span></button>
             </div>
             
             <div className="search-events-container">

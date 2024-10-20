@@ -10,29 +10,55 @@
 * {
   padding: 0;
   margin: 0;
-  font-weight: 400;
+  font-weight: bold;
 }
 
 /* Main title container */
 .title-container {
-  /* background-color: orange; */
   padding-top: 50px;
   text-align: left;
   margin-bottom: var(--m4);
-  border-bottom: 1px solid;
+  border-bottom: var(--border);
+  display: flex;
 }
 
 /* Title text */
 .title-container .title {
   padding-bottom: var(--m1);
   font-weight: 400;
-  font-size: var(--f1);
+  font-size: 2rem;
+  color: var(--text1);
+  font-weight: bold;
 }
 
 /* Subtitle text */
 .title-container .title span {
   margin-left: var(--m2);
   font-size: var(--f4);
+  color: var(--text2);
+  font-weight: bold;
+}
+
+/* Theme button */
+.title-container .theme-button {
+  margin-left: auto;
+  margin-top: auto;
+  margin-bottom: var(--m2);
+  justify-content: flex-end;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  padding: var(--m2);
+  background-color: var(--btn-bg);
+  color: var(--btn-text);
+  gap: var(--m1);
+  border: none;
+  border-radius: var(--r3);
+}
+
+/* Theme button hover */
+.title-container .theme-button:hover {
+  background-color: var(--btn-hover-bg);
 }
 
 /* All buttons */

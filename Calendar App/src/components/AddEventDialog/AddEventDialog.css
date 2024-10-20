@@ -15,8 +15,9 @@
 
 /* Modal container */
 .add-event-dialog-container .modal-container {
-    background-color: white;
+    background-color: var(--context-bg);
     width: 35%;
+    min-width: 450px;
     border-radius: var(--r2);
     box-shadow: 0px 0px 15px rgba(0,0,0,0.5);
 }
@@ -29,6 +30,7 @@
     text-align: left;
     margin-top: var(--m2);
     margin-left: var(--m2);
+    color: var(--text1);
 }
 
 /* Form */
@@ -39,33 +41,6 @@
     /* background-color: red; */
     margin-bottom: var(--m2);
     gap: var(--m2);
-}
-
-/* Form Label */
-.modal-container form label {
-    text-align: left;
-    margin-top: var(--m2);
-}
-
-/* Form input */
-.modal-container form input {
-    box-sizing: border-box;
-    padding: var(--m2);
-    margin: 0;
-    /* background-color: lime; */
-    height: 30px;
-    border-radius: var(--r1);
-}
-
-/* Form textarea */
-.modal-container form textarea {
-    box-sizing: border-box;
-    padding: var(--m2);;
-    margin: 0;
-    flex: 1;
-    /* background-color: lime; */
-    border-radius: var(--r1);
-    resize: none;
 }
 
 /* Form left section */
@@ -88,6 +63,36 @@
     /* margin-bottom: var(--m2); */
     margin-right: var(--m2);
     gap: var(--m1);
+}
+
+/* Form Label */
+.modal-container form label {
+    text-align: left;
+    margin-top: var(--m2);
+    color: var(--text2);
+}
+
+/* Form input */
+.modal-container form input {
+    box-sizing: border-box;
+    padding: var(--m2);
+    margin: 0;
+    /* background-color: lime; */
+    height: 30px;
+    border-radius: var(--r1);
+    border: var(--border);
+}
+
+/* Form textarea */
+.modal-container form textarea {
+    box-sizing: border-box;
+    padding: var(--m2);;
+    margin: 0;
+    flex: 1;
+    /* background-color: lime; */
+    border-radius: var(--r1);
+    resize: none;
+    border: var(--border);
 }
 
 /* Form Checkbox Container */
@@ -125,4 +130,13 @@
     flex: 1;
     height: 30px;
     border-radius: var(--r2);
+    background-color: var(--btn-bg);
+    border: none;
+    outline: none;
+    color: var(--btn-text);
+}
+
+/* Form buttons hover */
+.modal-container form .right-section .buttons-container button:hover {
+    background-color: var(--btn-hover-bg);
 }
