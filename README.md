@@ -7,42 +7,42 @@ This is a simple React app that allows users to to save and view your events. Yo
 <br>
 
 #### App Screenshot
-![Screenshot]()
+![Screenshot](https://raw.githubusercontent.com/umarraj008/Calendar-App/refs/heads/main/Project%20Screenshots/App.png)
 <br>
 
 #### Add an Event
 You can create a new event.
-![Screenshot]()
+![Screenshot](https://raw.githubusercontent.com/umarraj008/Calendar-App/refs/heads/main/Project%20Screenshots/addEvent.gif)
 <br>
 
 #### Edit an Event
 You can edit an events information.
-![Screenshot]()
+![Screenshot](https://raw.githubusercontent.com/umarraj008/Calendar-App/refs/heads/main/Project%20Screenshots/editEvent.gif)
 <br>
 
 #### Delete an Event
 You can delete an event.
-![Screenshot]()
+![Screenshot](https://raw.githubusercontent.com/umarraj008/Calendar-App/refs/heads/main/Project%20Screenshots/deleteEvent.gif)
 <br>
 
 #### Important Events
 You can flag an event as important, and will be shown with a red border.
-![Screenshot]()
+![Screenshot](https://raw.githubusercontent.com/umarraj008/Calendar-App/refs/heads/main/Project%20Screenshots/important.png)
 <br>
 
 #### Search Event By Text
 You can search for events by text, it will search the events title to see if it contains the search text. 
-![Screenshot]()
+![Screenshot](https://raw.githubusercontent.com/umarraj008/Calendar-App/refs/heads/main/Project%20Screenshots/textSearchEvent.gif)
 <br>
 
 #### Search Event By Date
 You can search by date and it will show events within that date and after.
-![Screenshot]()
+![Screenshot](https://raw.githubusercontent.com/umarraj008/Calendar-App/refs/heads/main/Project%20Screenshots/dateSearchEvent.gif)
 <br>
 
 #### Change Theme
 You can change the theme from light and dark.
-![Screenshot]()
+![Screenshot](https://raw.githubusercontent.com/umarraj008/Calendar-App/refs/heads/main/Project%20Screenshots/theme.png)
 
 ## Built With
 
