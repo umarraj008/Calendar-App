@@ -6,6 +6,9 @@
 This is a simple React app that allows users to to save and view your events. You can create new events, search for events, and search by date.
 <br>
 
+The app comes with 5 example events, feel free to edit, search, and delete them.
+<br>
+
 #### App Screenshot
 ![Screenshot](https://raw.githubusercontent.com/umarraj008/Calendar-App/refs/heads/main/Project%20Screenshots/App.png)
 <br>
