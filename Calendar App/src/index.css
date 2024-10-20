@@ -55,6 +55,10 @@
   --DN1100: #DEE4EA;
 }
 
+* {
+  transition: 0.2s ease-in-out;
+}
+
 /* Light Theme */
 :root[data-theme="light"] {
   --bg: var(--N100);
@@ -62,23 +66,30 @@
   --border-color: var(--N400);
   
   /* Text */
-  --text1: black; /* Neutral100 */
-  --text2: black; /* Neutral100 */
-  --text3: black; /* Neutral100 */
-  --text4: black; /* Neutral100 */
-  --text-red: #AE2E24;
+  --text1: black;
+  --text2: rgb(50, 50, 50);
+  --text3: rgb(120, 120, 120);
+  --text4: rgb(120, 120, 120);
+  --text-red: #C9372C;
 
   /* Card */
-  --card-bg: var(--N300); /* Neutral300 */
+  --card-bg: var(--N300);
   --card-border: none;
   --card-shadow: 0px 0px 0px 1px #00000000, 0px 1px 1px #091E4240, 0px 0px 1px #091E424F;
-  --card-important-bg: #FD9891;
+  --card-important: #C9372C;
   
+  /* Context Menu */
+  --context-bg: var(--N100);
+  --context-shadow: 0px 0px 0px 1px #00000000, 0px 2px 5px #091E4240, 0px 0px 10px #091E424F;
+  --context-edit-btn-bg: var(--N400);
+  --context-delete-btn-bg: #F15B50;
+  --context-delete-btn-hover-bg: #C9372C;
+
   /* Button */
-  --btn-bg: var(--N400); /* Neutral500 */
+  --btn-bg: var(--N400);
   --btn-border: white;
   --btn-text: white;
-  --btn-hover-bg: black;
+  --btn-hover-bg: var(--N900);
   --btn-active-bg: black;
   --btn-delete-bg: black;
 
@@ -96,16 +107,16 @@
   
   /* Text */
   --text1: white;
-  --text2: white;
-  --text3: white;
-  --text4: white;
-  --text-red: red;
+  --text2: rgb(219, 219, 219);
+  --text3: rgb(184, 184, 184);
+  --text4: rgb(154, 154, 154);
+  --text-red: #C9372C;
 
   /* Card */
   --card-bg: #2C333A;
   --card-border: white;
   --card-shadow: 0px 0px 0px 1px #ffffff00, 0px 1px 1px #DEE4EA40, 0px 0px 1px #DEE4EA4F;
-  --card-important-bg: red;
+  --card-important: #C9372C;
   
   /* Button */
   --btn-bg: #B6C2CF;

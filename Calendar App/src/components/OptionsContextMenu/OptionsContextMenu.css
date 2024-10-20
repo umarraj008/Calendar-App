@@ -1,9 +1,10 @@
 /* Edit context menu container */
 .edit-context-menu-container {
     position: absolute;
-    background-color: var(--btn-bg);
-    border-radius: var(--r2) 0 var(--r2) var(--r2);
-    padding: var(--m2);
+    background-color: var(--context-bg);
+    border-radius: var(--r1);
+    box-shadow: var(--context-shadow);
+    padding: var(--m1);
     display: flex;
     flex-direction: column;
     margin-top: 75px;
@@ -21,13 +22,19 @@
     gap: var(--m1);
     padding-left: var(--m2);
     padding-right: var(--m2);
+    color: var(--btn-text);
 }
 
 /* Edit Event button */
 .edit-context-menu-container .edit-event-button {
     border-radius: var(--r1);
     /* border-radius: var(--r1) var(--r1) 0 0; */
-    border-bottom: 1px solid lightgrey;
+    background-color: var(--context-edit-btn-bg);
+}
+
+/* Edit Event button hover */
+.edit-context-menu-container .edit-event-button:hover {
+    background-color: var(--btn-hover-bg);
 }
 
 /* Delete Button */
@@ -35,5 +42,10 @@
     border-radius: var(--r1);
     /* border-radius: 0 0 var(--r1) var(--r1); */
     border-bottom: none;
-    background-color: rgb(245, 129, 129);
+    background-color: var(--context-delete-btn-bg);
+}
+
+/* Delete Button hover */
+.edit-context-menu-container .delete-event-button:hover {
+    background-color: var(--context-delete-btn-hover-bg);
 }

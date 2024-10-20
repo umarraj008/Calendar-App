@@ -8,7 +8,8 @@ function Event(props) {
 
   // Convert date to Day + Date String
   const date = new Date(data.date);
-  const eventDateString = date.toLocaleString("default", {weekday: "short"}) + " " +  date.getDate();
+  const eventDateString = date.toLocaleString("default", {weekday: "short"});
+  const eventDate = date.getDate();
   const isDateToday = date.toDateString() == new Date().toDateString();
 
   // Options button click
@@ -59,7 +60,8 @@ function Event(props) {
       </div>
 
       <div className='date-container'>
-        <p className={(isDateToday) ? "date date-today" : "date"}>{eventDateString}</p>
+        <p className={(isDateToday) ? "day date-today" : "day"}>{eventDateString}</p>
+        <p className={(isDateToday) ? "date date-today" : "date"}>{eventDate}</p>
       </div>
     </div>
   )
