@@ -58,9 +58,9 @@ You can change the theme from light and dark.
 
 To get started first extract the Calendar-App.zip.  
 
-Then in CMD cd to the directory:
+Then in CMD cd to the directory (make sure your inside the "Calendar App" Folder):
 ```
-cd Calendar-App/Calendar-App
+cd Calendar-App-1.0\Calendar-App-1.0\Calendar App
 ```
 Now you can run the application:
 ```
