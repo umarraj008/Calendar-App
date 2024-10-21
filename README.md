@@ -59,18 +59,26 @@ You can change the theme from light and dark.
 
 ## Getting Started
 
-To get started first extract the Calendar-App.zip.  
+1. npm/nodejs is required to run this application. It can be downloaded from: https://nodejs.org/en/download/package-manager.
 
-Then in CMD cd to the directory (make sure your inside the "Calendar App" Folder):
+2. To get started first extract the Calendar-App.zip.  
+
+3. Then in command prompt cd to the directory (make sure your inside the "Calendar App" Folder):
 ```
 cd Calendar-App-1.0\Calendar-App-1.0\Calendar App
 ```
-Now you can run the application:
+
+4. Next install the packages:
+```
+npm install
+```
+
+5. Now you can run the application:
 ```
 npm run dev
 ```
 
-You can view the app at:
+6. You can view the app at:
 ```
 http://localhost:5173/ 
 or the address given by the console 
