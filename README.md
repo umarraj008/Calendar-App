@@ -40,7 +40,7 @@ You can search for events by text, it will search the events title to see if it 
 
 #### Search Event By Date
 You can search by date and it will show events within that date and after.
-![Screenshot](https://raw.githubusercontent.com/umarraj008/Calendar-App/refs/heads/main/Project%20Screenshots/dateSearchEvent.gif)
+![Screenshot](https://raw.githubusercontent.com/umarraj008/Calendar-App/refs/heads/main/Project%20Screenshots/dateSearch.gif)
 <br>
 
 #### Change Theme
